@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gridlayout.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gridlayout="http://schemas.android.com/apk/res/me.rosebudClient"
+    android:id="@+id/gridLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    gridlayout:columnCount="10"
+    gridlayout:useDefaultMargins="true" >
+
+    <ImageView
+        android:id="@+id/showList_image"
+        gridlayout:layout_column="0"
+        gridlayout:layout_row="0"
+        gridlayout:layout_rowSpan="2"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/showList_moviename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        gridlayout:layout_column="1"
+        gridlayout:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="0"
+        android:text="name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/showList_hall"
+        android:layout_width="wrap_content"
+        gridlayout:layout_column="1"
+        gridlayout:layout_row="1"
+        android:text="Hall: 4"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/showList_price"
+        android:layout_width="wrap_content"
+        gridlayout:layout_column="2"
+        gridlayout:layout_row="1"
+        android:text="10.00 €"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/showList_time"
+        android:layout_width="wrap_content"
+        gridlayout:layout_column="3"
+        gridlayout:layout_row="1"
+        android:text="Time: 23:23"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</com.gridlayout.GridLayout>

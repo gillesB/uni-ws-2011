@@ -1,0 +1,27 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/ratemovie_txtMoviename"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:text="@+id/label"
+        android:textSize="20dp" >
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/ratemovie_imgMovie"
+        android:layout_width="63dp"
+        android:layout_height="66dp"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_row="0"
+        android:src="@drawable/rosebud_luncher_icon" />
+
+
+</GridLayout>

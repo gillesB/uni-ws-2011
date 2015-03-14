@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gridlayout.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gridlayout="http://schemas.android.com/apk/res/me.rosebudClient"
+    android:id="@+id/gridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageButton
+        android:id="@+id/btnShows_left"
+        android:layout_width="wrap_content"
+        gridlayout:layout_column="0"
+        android:layout_gravity="left"
+        gridlayout:layout_row="0"
+        android:src="@drawable/ic_action_left_arrow" />
+
+    <TextView
+        android:id="@+id/txtShow_Date"
+        gridlayout:layout_column="1"
+        android:layout_gravity="center"
+        gridlayout:layout_row="0"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/btnShows_right"
+        gridlayout:layout_column="2"
+        gridlayout:layout_row="0"
+        android:src="@drawable/ic_action_right_arrow" />
+
+</com.gridlayout.GridLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rosebud</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="buyTicket">Buy Ticket</string>
+    <string name="rateMovie">Rate Movie</string>
+    <string name="edtUsername_Hint">Username</string>
+    <string name="edtPassword_hint">Password</string>
+    <string name="txtLoggedInAs_text">Logged in as:</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="btnBuyTicket">Buy Ticket</string>
+    <string name="yourRating">Your Rating:</string>
+    <string name="amountOfTicketsToBuy">Amount of tickets to buy:</string>
+    <string name="cancel">Cancel</string>
+    <string name="buy">Buy</string>
+    <string name="myTickets">my Tickets</string>
+    <string name="noDataToShow">Unfortunately, there is no data available...</string>
+
+    <string-array name="ratings">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="buyTicket_Successful">Buying Tickets was successful</string>
+    <string name="buyTicket_not_Successful">Buying Tickets was not successful. Please try again later.</string>
+    <string name="login_not_successful">Login was not successful. Username or Password was wrong. Please try again.</string>
+    <string name="rate">Rate</string>
+
+    	<string name="search">Search</string>
+    <string name="movies">Movies</string>
+    <string name="people">People</string>
+    
+    <string name="no_imdb_id_found">Sorry, no IMDB page exists for this movie</string>
+    <string name="no_image_found">Sorry, no image found for this movie</string>
+    <string name="no_movies_found">No movies found</string>
+    
+    <string name="close">Close</string>
+    
+    <string name="visit_imdb">Visit IMDB</string>
+    <string name="view_full_image">View full image</string>
+     
+    <string name="no_movie_selected">No movie selected</string>
+    <string name="addMovie">Add Movie</string>
+    <string name="networkProblem">Network Problems. Check Log for details.</string>
+    <string name="defaultIP">10.0.2.2</string>
+    <string name="serverIPaddress">Server IP Address:</string>
+    <string name="pleaseWait">Please wait...</string>
+    <string name="connecting">Connecting...</string>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gridlayout.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gridlayout="http://schemas.android.com/apk/res/me.rosebudClient"
+    android:id="@+id/gridLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    gridlayout:columnCount="5" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="110dp"
+        android:layout_height="159dp"
+        gridlayout:layout_column="0"
+        gridlayout:layout_columnSpan="2"
+        gridlayout:layout_row="1"
+        gridlayout:layout_rowSpan="2"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/movieDetail_txtMovieName"
+        android:layout_width="186dp"
+        gridlayout:layout_column="2"
+        gridlayout:layout_columnSpan="2"
+        android:layout_gravity="left"
+        gridlayout:layout_row="1"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <com.gridlayout.GridLayout
+        android:id="@+id/movieDetail_layoutUserRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        gridlayout:layout_column="2"
+        gridlayout:layout_columnSpan="2"
+        gridlayout:layout_row="2"
+        gridlayout:useDefaultMargins="true" >
+
+        <TextView
+            android:id="@+id/movieDetail_txtUserRating"
+            android:layout_width="wrap_content"
+            gridlayout:layout_column="0"
+            gridlayout:layout_gravity="left"
+            gridlayout:layout_row="0"
+            android:text="@string/yourRating"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            gridlayout:layout_column="1"
+            gridlayout:layout_row="0" />
+    </com.gridlayout.GridLayout>
+
+    <com.gridlayout.GridLayout
+        android:id="@+id/movieDetail_layoutShowInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        gridlayout:layout_column="2"
+        gridlayout:layout_row="2"
+        gridlayout:useDefaultMargins="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/movieDetail_txtTime"
+            android:layout_width="wrap_content"
+            gridlayout:layout_column="0"
+            gridlayout:layout_columnSpan="2"
+            gridlayout:layout_row="0"
+            android:text="23/12/2012 23:23"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/movieDetail_txtHall"
+            android:layout_width="wrap_content"
+            gridlayout:layout_column="0"
+            android:layout_gravity="left"
+            gridlayout:layout_row="1"
+            android:text="Hall: 4"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/movieDetail_txtPrice"
+            android:layout_width="wrap_content"
+            gridlayout:layout_column="1"
+            android:layout_gravity="left"
+            gridlayout:layout_row="1"
+            android:text="10.00 €"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/movieDetail_btnBuyTicket"
+            android:layout_width="match_parent"
+            gridlayout:layout_column="0"
+            gridlayout:layout_columnSpan="2"
+            android:layout_gravity="center"
+            gridlayout:layout_row="2"
+            android:onClick="btnBuyTicketClicked"
+            android:text="@string/btnBuyTicket" />
+    </com.gridlayout.GridLayout>
+
+    <RatingBar
+        android:id="@+id/movieDetail_ratingBar_averageRating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        gridlayout:layout_column="1"
+        gridlayout:layout_columnSpan="2"
+        android:layout_gravity="left"
+        gridlayout:layout_row="3"
+        android:numStars="5"
+        android:stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/movieDetail_txtDescription"
+        android:layout_height="236dp"
+        gridlayout:layout_column="1"
+        gridlayout:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="5"
+        android:inputType="none" >
+    </TextView>
+
+    <com.gridlayout.Space
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        gridlayout:layout_column="0"
+        gridlayout:layout_row="0" />
+
+    <com.gridlayout.Space
+        android:layout_width="21dp"
+        android:layout_height="1dp"
+        gridlayout:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="0" />
+
+    <com.gridlayout.Space
+        android:layout_width="99dp"
+        android:layout_height="1dp"
+        gridlayout:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="0" />
+
+    <com.gridlayout.Space
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        gridlayout:layout_column="0"
+        gridlayout:layout_row="1" />
+
+    <com.gridlayout.Space
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        gridlayout:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="4" />
+
+    <com.gridlayout.Space
+        android:layout_width="17dp"
+        android:layout_height="1dp"
+        gridlayout:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        gridlayout:layout_row="0" />
+
+</com.gridlayout.GridLayout>

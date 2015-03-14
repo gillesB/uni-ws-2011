@@ -1,0 +1,2 @@
+INSERT INTO show
+VALUES (101,"Die Hard",3,"",3);

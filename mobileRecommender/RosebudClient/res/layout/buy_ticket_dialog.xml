@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:useDefaultMargins="true" >
+
+    <EditText
+        android:id="@+id/buyTickets_edtAmount"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:inputType="numberDecimal"
+        android:text="1" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buyTickets_btnCancel"
+        android:layout_column="1"
+        android:layout_row="1"
+        android:text="@string/cancel" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:text="@string/amountOfTicketsToBuy"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/buyTickets_btnBuy"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:text="@string/buy" />
+
+</GridLayout>

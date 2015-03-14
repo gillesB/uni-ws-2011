@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rosebud</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="buyTicket">Buy Ticket</string>
+    <string name="rateMovie">Rate Movie</string>
+    <string name="edtUsername_Hint">Username</string>
+    <string name="edtPassword_hint">Password</string>
+    <string name="txtLoggedInAs_text">Logged in as:</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="btnBuyTicket">Buy Ticket</string>
+    <string name="yourRating">Your Rating:</string>
+    <string name="amountOfTicketsToBuy">Amount of tickets to buy:</string>
+    <string name="cancel">Cancel</string>
+    <string name="buy">Buy</string>
+    <string name="myTickets">my Tickets</string>
+    <string name="noDataToShow">Unfortunately, there is no data available...</string>
+
+    <string-array name="ratings">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+</resources>

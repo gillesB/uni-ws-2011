@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- id's which will be in R.id and you'll use later -->
+  <item type="requestCode" name="ADD_MOVIE" />
+
+</resources>
