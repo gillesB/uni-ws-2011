@@ -1,0 +1,4 @@
+obj/assigment1.o obj/assigment1.dep : src/assigment1.cpp src/stdafx.h src/core/image.h \
+ src/core/defs.h src/core/algebra.h src/rt/basic_definitions.h \
+ src/rt/../core/defs.h src/rt/../core/algebra.h src/rt/primitives.h \
+ src/rt/basic_definitions.h src/rt/cameras.h

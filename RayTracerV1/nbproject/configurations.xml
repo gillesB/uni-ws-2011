@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="69">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="Sheet04_Skeleton" root=".">
+      <df name=".svn">
+        <df name="prop-base" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="props" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="text-base" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="tmp" kind="SOURCE_LOGICAL_FOLDER">
+          <df name="prop-base" kind="SOURCE_LOGICAL_FOLDER">
+          </df>
+          <df name="props" kind="SOURCE_LOGICAL_FOLDER">
+          </df>
+          <df name="text-base" kind="SOURCE_LOGICAL_FOLDER">
+          </df>
+        </df>
+        <in>all-wcprops</in>
+        <in>dir-props</in>
+        <in>entries</in>
+      </df>
+      <df name="models" kind="SOURCE_LOGICAL_FOLDER">
+      </df>
+      <df name="obj">
+        <df name="core" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="impl" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="rt" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+      </df>
+      <df name="src" kind="SOURCE_LOGICAL_FOLDER">
+        <df name="core" kind="SOURCE_LOGICAL_FOLDER">
+          <in>algebra.h</in>
+          <in>bbox.h</in>
+          <in>defs.h</in>
+          <in>image.cpp</in>
+          <in>image.h</in>
+          <in>memory.h</in>
+          <in>ray.h</in>
+          <in>util.h</in>
+        </df>
+        <df name="impl" kind="SOURCE_LOGICAL_FOLDER">
+          <in>basic_primitives.h</in>
+          <in>integrator.h</in>
+          <in>lwobject.h</in>
+          <in>lwobject_primitive.cpp</in>
+          <in>lwobject_reader.cpp</in>
+          <in>perspective_camera.h</in>
+          <in>phong_shaders.h</in>
+          <in>samplers.h</in>
+        </df>
+        <df name="rt" kind="SOURCE_LOGICAL_FOLDER">
+          <in>basic_definitions.h</in>
+          <in>bvh.cpp</in>
+          <in>bvh.h</in>
+          <in>geometry_group.cpp</in>
+          <in>geometry_group.h</in>
+          <in>renderer.h</in>
+          <in>shading_basics.h</in>
+          <in>texture.h</in>
+        </df>
+        <in>assigment4_ex1_and_2.cpp</in>
+        <in>assigment4_ex3.cpp</in>
+        <in>main.cpp</in>
+        <in>stdafx.cpp</in>
+        <in>stdafx.h</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>Makefile-Sheet04_Skeleton.mk</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-Sheet04_Skeleton.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath>./minirt</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

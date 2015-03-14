@@ -1,0 +1,221 @@
+package evolutionaryAlgorithm;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.concurrent.ThreadLocalRandom;
+
+import Utils.Utils;
+
+import suffixTree.AnnotatedTree;
+import suffixTree.IntegerArrayWrapper;
+import suffixTree.RepetitionInformation;
+
+public class Individual implements Comparable<Individual> {
+	private ListSet<int[]> productions;
+	private HashMap<IntegerArrayWrapper, RepetitionInformation> allRepetitions;
+	private RepetitionInformation[] repetitions;
+	// private String nonTerminal = AnnotatedTree.nonTerminal;
+	Integer length;
+	private int needToFetchNewRepetitions = 0;
+
+	public Individual(Collection<int[]> productions) {
+		this.productions = new ListSet<int[]>(productions);
+		length = Utils.productionsLength(this.productions);
+	}
+
+	public void mutate() throws Exception {
+		// String productionToReplace = pickProduction();
+		// removeProduction(productionToReplace);
+
+		if (needToFetchNewRepetitions == 0) {
+			getNewRepetitions();
+			needToFetchNewRepetitions = 5;
+		} else {
+			needToFetchNewRepetitions--;
+		}
+
+		RepetitionInformation randRepetition = pickNextRepetition();
+
+		addProduction(randRepetition.repetition);
+		length = Utils.productionsLength(productions);
+	}
+
+	private void getNewRepetitions() {
+		int[] text = new int[0];
+
+		for (int[] p : productions) {
+			if (p != null) {
+				text = Utils.concatAll(text, new int[] { AnnotatedTree.delimiter }, p);
+			}
+		}
+
+		allRepetitions = new AnnotatedTree(text, 2).getRepetitions();
+		repetitions = allRepetitions.values().toArray(new RepetitionInformation[0]);
+		Arrays.sort(repetitions);
+	}
+
+	private RepetitionInformation pickNextRepetition() throws Exception {
+
+		int allRepetitionsSize = repetitions.length > 10 ? 10 : repetitions.length;
+		if (allRepetitionsSize <= 0) {
+			Utils.printGrammarToFile(productions.getArrayList(), "/dev/shm/productions.out");
+			throw new Exception("no new Repetitions found");
+		}
+		int randomNumber = ThreadLocalRandom.current().nextInt(allRepetitionsSize);
+		RepetitionInformation ret = repetitions[randomNumber];
+		Utils.removeElement(repetitions, randomNumber);
+		return ret;
+	}
+
+	// private int[] pickProduction() {
+	// // pick a random production
+	//
+	// }
+
+	public int addProduction(int[] production) {
+		if (productions.contains(production)) {
+			return -1;
+		}
+
+		int lastProduction = getProductionNumber();
+		
+		int[] replacement = new int[3];
+		replacement[0] = AnnotatedTree.nonTerminal;
+		int[] counter_ints = Utils.shortToIntegerArray((short) lastProduction);
+		replacement[1] = counter_ints[0];
+		replacement[2] = counter_ints[1];
+
+		for (int i = 0; i < productions.size(); i++) {
+			int[] cmpProduction = productions.get(i);
+			if (cmpProduction != null) {
+
+				int[] replacedProduction = Utils.replaceInArray(cmpProduction, production, replacement, true);
+
+				productions.set(i, replacedProduction);
+
+			}
+		}
+		productions.addAt(lastProduction, production);
+		return lastProduction;
+	}
+
+	private int getProductionNumber() {
+		int counter = productions.size();
+		int[] counterArr = Utils.shortToIntegerArray((short) counter);
+
+		while (counterArr[0] == AnnotatedTree.delimiter || counterArr[1] == AnnotatedTree.delimiter
+		|| counterArr[0] == AnnotatedTree.escape || counterArr[1] == AnnotatedTree.escape
+		|| counterArr[0] == AnnotatedTree.nonTerminal || counterArr[1] == AnnotatedTree.nonTerminal
+		|| (counterArr[0] == 0xd && counterArr[1] == 0xa) || counterArr[1] == 0xd) {
+			counter++;
+			counterArr = Utils.shortToIntegerArray((short) counter);
+		}
+
+		return counter;
+	}
+
+	public void removeProduction(int index) {
+		// TODO rewrite this one, get the index of a production, decompress it
+		// and replace it in the other productions
+
+		int[] decompressedProduction = decompressProductionNoWriteBack(index);
+
+		int[] replacement = new int[3];
+		replacement[0] = AnnotatedTree.nonTerminal;
+		int[] counter_ints = Utils.shortToIntegerArray((short) index);
+		replacement[1] = counter_ints[0];
+		replacement[2] = counter_ints[1];
+
+		for (int i = 0; i < productions.size(); i++) {
+			int[] production = productions.get(i);
+			if (production != null) {
+				int[] newProduction = Utils.replaceInArray(production, replacement, decompressedProduction, true);
+				productions.set(i, newProduction);
+			}
+		}
+
+		productions.set(index, null);
+	}
+
+	private int[] decompressProductionNoWriteBack(int index) {
+		int[] production = null;
+		
+		if(index == 36){
+			//TODO remove 
+			int bla = 32;
+		}
+		
+		try {
+			production = productions.get(index);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		if (production == null) {
+			return null;
+		}
+
+		int[] decompressedProduction = new int[0];
+		for (int j = 0; j < production.length; j++) {
+			int c = production[j];
+			if (c == AnnotatedTree.escape) {
+				decompressedProduction = Utils.concatAll(decompressedProduction, new int[] {AnnotatedTree.escape, production[j + 1] });
+				j++;
+			} else if (c == AnnotatedTree.nonTerminal) {
+				int productionID = Utils.intsToShort(production[j + 1], production[j + 2]);
+				j += 2;
+				int productionIndex = ((int) productionID);
+				decompressedProduction =
+				Utils.concatAll(decompressedProduction, decompressProductionNoWriteBack(productionIndex));
+			} else {
+				decompressedProduction = Utils.concatAll(decompressedProduction, new int[] { production[j] });
+			}
+		}
+		return decompressedProduction;
+	}
+
+	public ListSet<int[]> getProductions() {
+		return productions;
+	}
+
+	@Override
+	public int compareTo(Individual arg0) {
+		return this.length.compareTo(arg0.length);
+	}
+	
+	public ProductionHirarchy getHirarchyOfProduction(int index){
+		ProductionHirarchy hirarchy = new ProductionHirarchy();
+		hirarchy.add(new NumberAndProduction(index, productions.get(index)));
+		
+		int[] production = productions.get(index);
+		for (int j = 0; j < production.length; j++) {
+			int c = production[j];
+			if (c == AnnotatedTree.escape) {
+				j++;
+			} else if (c == AnnotatedTree.nonTerminal) {
+				int productionID = Utils.intsToShort(production[j + 1], production[j + 2]);
+				j += 2;
+				ProductionHirarchy subHirarchy = getHirarchyOfProduction(productionID);
+				for(NumberAndProduction n : subHirarchy){
+					hirarchy.add(n);
+				}
+			} 
+		}		
+		return hirarchy;
+	}
+
+	public void addProductionHirarchy(ProductionHirarchy hirarchy){
+		for(int i = hirarchy.size()-1; i>0; i--){
+			int[] production = hirarchy.get(i).production;
+			if(productions.contains(production)){
+				int index = productions.indexOf(production);
+				hirarchy.replaceIndex(i, index);
+			}else{
+				int addedOnIndex = this.addProduction(production);
+				hirarchy.replaceIndex(i, addedOnIndex);
+			}
+		}
+	}
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="69">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="src" displayName="src" projectFiles="true">
+      <logicalFolder name="core"
+                     displayName="core"
+                     projectFiles="true"
+                     kind="SOURCE_LOGICAL_FOLDER">
+        <itemPath>src/core/algebra.h</itemPath>
+        <itemPath>src/core/defs.h</itemPath>
+        <itemPath>src/core/image.cpp</itemPath>
+        <itemPath>src/core/image.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="rt"
+                     displayName="rt"
+                     projectFiles="true"
+                     kind="SOURCE_LOGICAL_FOLDER">
+        <itemPath>src/rt/basic_definitions.h</itemPath>
+        <itemPath>src/rt/cameras.h</itemPath>
+        <itemPath>src/rt/primitives.h</itemPath>
+      </logicalFolder>
+      <itemPath>src/assigment1.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
+      <itemPath>src/stdafx.cpp</itemPath>
+      <itemPath>src/stdafx.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <output>/home/baatz/NetBeansProjects/gc_A1/minirt</output>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

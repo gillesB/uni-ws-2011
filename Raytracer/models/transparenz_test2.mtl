@@ -1,0 +1,35 @@
+# Blender MTL File: 'transparenz_test2.blend'
+# Material Count: 3
+newmtl Floor
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.401600 0.407840 0.000000
+Ks 0.855000 0.855000 0.855000
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Stones
+Ns 17.647059
+Ka 0.000000 0.000000 0.000000
+Kd 0.470560 0.470560 0.470560
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd stones_diffuse.png
+map_Bump -bm 0.4000 stones_bump.png
+map_Ka stones_diffuse.png
+
+
+newmtl Bottle
+Ns 78.431373
+Ka 0.000000 0.000000 0.000000
+Kd 0.105549 0.546712 0.568433
+Ks 0.294940 0.294940 0.294940
+Ni 1.000000
+d 0.001000
+illum 2
+
+
